@@ -1,0 +1,66 @@
+<script>
+  
+  let q = 1;
+
+  //---Questão 1---
+  
+  function mean(a) {
+    let sum=0;
+    for(var i=0; i < a.length; i++) {
+      sum += a[i];
+    }
+    sum /= a.length;
+    return sum;
+  }
+
+  let array = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+  console.log(`Saída da ${q++}ª questão:`);
+  console.log(mean(array));
+  
+
+  //---Questão 2---
+  
+  const mult = (a, b) => (a*b);
+  function apply(a, b, myFunc) {
+    return myFunc(a, b);
+  }
+  console.log(`Saída da ${q++}ª questão:`);
+  console.log(apply(2, 3, mult));
+  
+
+  //---Questão 3---
+  
+  function avg(array) {
+    let sum=0;
+    for(var i=0; i < array.length; i++) {
+      sum += array[i];
+    }
+    return (sum / array.length);
+  }
+
+  function compare(a, b) {
+    let comparison = 0;
+    if(avg(a.notas) > avg(b.notas))
+      comparison = 1;
+    else if(avg(a.notas) < avg(b.notas))
+      comparison = -1;
+    return comparison * (-1);
+  }
+
+  function ordenaAlunos(alunos) {
+    return alunos.sort(compare);
+  }
+
+  let alunos = [
+    {nome: "Jubileu", notas: [10, 10, 8]}, 
+    {nome: "Aslauga", notas: [10, 9, 10]}, 
+    {nome: "Nilperto", notas: [8, 7, 9]}];
+
+  let alunosOrdenados = ordenaAlunos(alunos);
+  console.log(`Saída da ${q++}ª questão:`);
+  for(var i=0; i < alunos.length; i++) {
+    console.log(`${alunosOrdenados[i].nome}: ${avg(alunosOrdenados[i].notas)}`);
+  }
+  
+
+</script>
